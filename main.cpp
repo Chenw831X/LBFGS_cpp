@@ -199,3 +199,17 @@ int LBFGS(){
         }
         return k;
 }
+
+int main(){
+        double start = cpuSecond();
+
+        int iter_num = LBFGS();
+
+        std::cout << iter_num << " iterations" << std::endl;
+        std::cout << "x = \n" << lbfgs_x.transpose() << std::endl;
+        std::cout << "f(x) = " << lbfgs_fx << std::endl;
+
+        double end = cpuSecond();
+        std::cout << "total time: " << end - start << std::endl;
+        return 0;
+}
